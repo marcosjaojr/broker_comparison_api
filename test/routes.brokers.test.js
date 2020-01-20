@@ -67,7 +67,7 @@ describe('routes : brokers', () => {
             chai.request(server)
                 .get('/api/v1/brokers/99999999')
                 .end((err, res) => {
-                    should.exist(err);
+                    should.not.exist(err);
 
                     res.status.should.eql(404);
 
@@ -105,7 +105,7 @@ describe('routes : brokers', () => {
             chai.request(server)
                 .get('/api/v1/brokers/9999999/price-table')
                 .end((err, res) => {
-                    should.exist(err);
+                    should.not.exist(err);
 
                     res.status.should.eql(404);
 
